@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Report') {
       steps {
-        sh '''cp /var/lib/jenkins/workspace/minmock-cucumber-report_master/target/surefire-reports/ /home/centos/mimockReport
+        sh '''tree /var/lib/jenkins/workspace/minmock-cucumber-report_master/target/surefire-reports/ 
 '''
       }
     }
