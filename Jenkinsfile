@@ -6,5 +6,11 @@ pipeline {
         sh 'mvn -X test'
       }
     }
+    stage('Report') {
+      steps {
+        sh '''cp /var/lib/jenkins/workspace/minmock-cucumber-report_master/target/surefire-reports/ /home/centos/mimockReport
+'''
+      }
+    }
   }
 }
