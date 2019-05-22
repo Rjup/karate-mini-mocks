@@ -12,5 +12,17 @@ pipeline {
 tree'''
       }
     }
+   stage ('Publish html') { 
+      steps {
+        // publish html
+        publishHTML target: [
+            allowMissing: false,
+            alwaysLinkToLastBuild: false,
+            keepAll: true,
+            reportDir: 'surefire-reports',
+            reportFiles: 'client.client.html',
+            reportName: 'Mock test report'
+          ]
+      }
   }
 }
