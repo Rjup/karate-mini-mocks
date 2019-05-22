@@ -12,17 +12,9 @@ pipeline {
 tree'''
       }
     }
-   stage ('Publish html') { 
+    stage('Publish html') {
       steps {
-        // publish html
-        publishHTML target: [
-            allowMissing: false,
-            alwaysLinkToLastBuild: false,
-            keepAll: true,
-            reportDir: 'surefire-reports',
-            reportFiles: 'client.client.html',
-            reportName: 'Mock test report'
-          ]
+        publishHTML([            allowMissing: false,            alwaysLinkToLastBuild: false,            keepAll: true,            reportDir: '/var/lib/jenkins/workspace/karate-mini-mocks_master/target/surefire-reports',            reportFiles: 'client.client.html',            reportName: 'Mock test report'          ])
       }
     }
   }
